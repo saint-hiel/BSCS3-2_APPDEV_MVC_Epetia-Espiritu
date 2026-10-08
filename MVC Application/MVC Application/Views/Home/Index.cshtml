@@ -1,8 +1,35 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
+    ViewData["BodyClass"] = "bg-home";
+
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="hero">
+    <div class="hero-text">
+        <p class="eyebrow">Hello, welcome to my portfolio! >< </p>
+        <h1>I'm <span class="highlight">Micah</span></h1>
+        <h2 class="role">BSCS 3-2 Student | Feature Writer | Aspiring Software Developer</h2>
+        <p class="about">
+            Writer with an inner editor, developer with an inner critic!
+            I enjoy working on projects that challenge me and allow me to learn new skills :)
+        </p>
+
+        <a class="btn-main" asp-area="" asp-controller="Portfolio" asp-action="Index">See My Projects</a>
+        <a class="btn-outline" asp-area="" asp-controller="Contact" asp-action="Index">Contact Me</a>
+    </div>
+</section>
+
+<section class="quick-links">
+    <a class="quick-card" asp-area="" asp-controller="Profile" asp-action="Index">
+        <h3>About</h3>
+        <p>Learn more about me and my skills.</p>
+    </a>
+    <a class="quick-card" asp-area="" asp-controller="Portfolio" asp-action="Index">
+        <h3>Projects</h3>
+        <p>Features and articles I've written.</p>
+    </a>
+    <a class="quick-card" asp-area="" asp-controller="Contact" asp-action="Index">
+        <h3>Contact</h3>
+        <p>Get in touch with me.</p>
+    </a>
+</section>

@@ -1,0 +1,21 @@
+﻿@model MVC_Application.Models.ProfileModel
+
+@{ 
+	ViewData["Title"] = "Profile";
+	ViewData["BodyClass"] = "bg-profile";
+}
+
+<div class="profile-card">
+	<h1>@Model.Name</h1>
+	<h2>@Model.Age</h2>
+	<h2>@Model.Course</h2>
+	<p>@Model.About</p>
+
+	<h3>Skills</h3>
+	<ul>
+		@foreach (var skill in Model.Skills)
+		{
+			<li>@skill</li>
+		}
+	</ul>
+</div>

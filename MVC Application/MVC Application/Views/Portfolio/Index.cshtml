@@ -1,0 +1,19 @@
+﻿@model List<MVC_Application.Models.ProjectModel>
+
+@{
+	ViewData["Title"] = "Portfolio";
+	ViewData["BodyClass"] = "bg-portfolio";
+}
+
+<h1>Portfolio</h1>
+
+<div class="portfolio-container">
+	@foreach (var project in Model)
+	{
+		<div class="portfolio-item">
+			<h2>@project.Title</h2>
+			<p>@project.Description</p>
+			<a href="@project.Link" target="_blank">View Project</a>
+		</div>
+	}
+</div>
