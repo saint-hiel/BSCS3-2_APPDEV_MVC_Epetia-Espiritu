@@ -5,7 +5,9 @@
         public string Name { get; set; } = "";
         public int Age { get; set; } = 0;
         public string Course { get; set; } = "";
+        public string Role { get; set; } = "";
         public string About { get; set; } = "";
+        public List<string> Interests { get; set; } = new List<string>();
         public List<string> Skills { get; set; } = new List<string>();
         public List<ProjectModel> Projects { get; set; } = new List<ProjectModel>();
     }
@@ -15,6 +17,7 @@
         public string Title { get; set; } = "";
         public string Description { get; set; } = "";
         public string Link { get; set; } = "";
+        public string Image { get; set; } = "";
 
     }
 }

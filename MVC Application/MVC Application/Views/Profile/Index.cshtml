@@ -1,21 +1,44 @@
 ﻿@model MVC_Application.Models.ProfileModel
 
-@{ 
-	ViewData["Title"] = "Profile";
-	ViewData["BodyClass"] = "bg-profile";
+@{
+    ViewData["Title"] = "About";
+    ViewData["BodyClass"] = "bg-profile";
 }
 
-<div class="profile-card">
-	<h1>@Model.Name</h1>
-	<h2>@Model.Age</h2>
-	<h2>@Model.Course</h2>
-	<p>@Model.About</p>
+<section class="profile-layout">
 
-	<h3>Skills</h3>
-	<ul>
-		@foreach (var skill in Model.Skills)
-		{
-			<li>@skill</li>
-		}
-	</ul>
-</div>
+    <aside class="profile-side">
+        <img class="profile-photo" src="~/images/me.jpg" alt="@Model.Name" />
+        <h2 class="profile-name">@Model.Name</h2>
+        <p class="profile-role">@Model.Role</p>
+        <p class="profile-school">@Model.Course, @Model.Age years old</p>
+    </aside>
+
+    <div class="profile-main">
+        <h1>About Me</h1>
+        <p class="profile-bio">@Model.About</p>
+
+        <div class="profile-info">
+            <div>
+                <h3>Interests</h3>
+                <ul>
+                    @foreach (var interest in Model.Interests)
+                    {
+                        <li>@interest</li>
+                    }
+                </ul>
+            </div>
+
+            <div>
+                <h3>Skills</h3>
+                <ul>
+                    @foreach (var skill in Model.Skills)
+                    {
+                        <li>@skill</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</section>
