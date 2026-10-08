@@ -1,19 +1,32 @@
 ﻿@model List<MVC_Application.Models.ProjectModel>
 
 @{
-	ViewData["Title"] = "Portfolio";
-	ViewData["BodyClass"] = "bg-portfolio";
+    ViewData["Title"] = "Portfolio";
+    ViewData["BodyClass"] = "bg-portfolio";
 }
 
-<h1>Portfolio</h1>
+<section class="portfolio-page">
+    <h1 class="portfolio-heading">My <span class="highlight">Portfolio</span></h1>
 
-<div class="portfolio-container">
-	@foreach (var project in Model)
-	{
-		<div class="portfolio-item">
-			<h2>@project.Title</h2>
-			<p>@project.Description</p>
-			<a href="@project.Link" target="_blank">View Project</a>
-		</div>
-	}
-</div>
+    <div class="portfolio-grid">
+        @foreach (var project in Model)
+        {
+            <div class="portfolio-card">
+                @if (!string.IsNullOrEmpty(project.Image))
+                {
+                    <img class="portfolio-img" src="~/images/projects/@project.Image" alt="@project.Title" />
+                }
+                else
+                {
+                    <div class="portfolio-img portfolio-img-empty"></div>
+                }
+
+                <div class="portfolio-body">
+                    <h3>@project.Title</h3>
+                    <p>@project.Description</p>
+                    <a class="card-btn" href="@project.Link" target="_blank">Read Article</a>
+                </div>
+            </div>
+        }
+    </div>
+</section>
