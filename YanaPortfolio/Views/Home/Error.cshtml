@@ -1,0 +1,13 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Something went wrong";
+}
+<main>
+    <h1>Something went wrong.</h1>
+    <p>Please try again or return to the portfolio.</p>
+    <a asp-controller="Home" asp-action="Index">Return to the menu</a>
+    @if (Model.ShowRequestId)
+    {
+        <p>Request ID: <code>@Model.RequestId</code></p>
+    }
+</main>
